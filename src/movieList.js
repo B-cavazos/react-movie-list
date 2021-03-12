@@ -23,7 +23,12 @@ const TableComponent = ({ movies }) => {
             return (
               <li className='list-group-item' key={index}>
 
-                <a onClick=''><big> {movie.title} </big></a>
+                <a> <img src={movie.movieImage} ></img>
+                <br></br>
+                <big src={movie.imbdLink} onClick={(e) => {
+      e.preventDefault();
+      window.location.href='http://google.com';
+      }} > {movie.title} </big></a>
                 <br></br>
 
                  {movie.genre} | {movie.year}
@@ -46,20 +51,10 @@ const TableComponent = ({ movies }) => {
       </div>
     </div>
   );
+
+
 };
 
-const images = [
-  { id: 1, src: 'https://m.media-amazon.com/images/M/MV5BM2ZiZTk1ODgtMTZkNS00NTYxLWIxZTUtNWExZGYwZTRjODViXkEyXkFqcGdeQXVyMTE2MzA3MDM@._V1_UX182_CR0,0,182,268_AL_.jpg', title: 'foo', description: 'bar' },
-  { id: 2, src: './assets/image02.jpg', title: 'foo', description: 'bar' },
-  { id: 3, src: './assets/image03.jpg', title: 'foo', description: 'bar' },
-  { id: 4, src: './assets/image04.jpg', title: 'foo', description: 'bar' },
-  { id: 5, src: './assets/image05.jpg', title: 'foo', description: 'bar' },
-
-];
-
-
-
-{ images.map(({id, src, title, description}) => <img key={id} src={src} title={title} alt={description} />)}
 
 
 // const images = [
