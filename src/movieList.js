@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 const TableComponent = ({ movies }) => {
   const showDetails = movieId => {
     // debugger;
@@ -11,39 +10,47 @@ const TableComponent = ({ movies }) => {
     if (!foundMovie) {
       alert(`Sorry! Could not find the movie you where looking for!`);
     } else {
-      alert(`${foundMovie.title} is a ${foundMovie.genre} flick that came out in ${foundMovie.year}!!`);
+      alert(`${foundMovie.title}: ${foundMovie.details}`);
     }
   };
 
+
   return (
-    <div className='row'>
-      <div className='col-6 offset-3'>
+    <div className='row text-center'>
+      <div className='col-7 offset-3'>
         <ul className='list-group'>
+
           {movies.map((movie, index) => {
             return (
+
               <li className='list-group-item' key={index}>
 
-                <a> <img src={movie.movieImage} ></img>
-                <br></br>
-                <big src={movie.imbdLink} onClick={(e) => {
-      e.preventDefault();
-      window.location.href='http://google.com';
-      }} > {movie.title} </big></a>
-                <br></br>
+                <a>
+                  <img
+                   src={movie.movieImage} >
+                  </img>
+                  <br></br>
+                </a>
 
+                <a href={movie.imdbLink} onClick='' target = "_blank" >
+                   <big>
+                     {movie.title}
+                   </big>
+                </a>
+
+                <br></br>
                  {movie.genre} | {movie.year}
                 <br></br>
 
                 <a
                   href='javascript:void(0)'
                   onClick={() => showDetails(movie.id)}>
-                    <button className='btn-primary'>Click for details</button>
+                    <button className='btn-primary'>Click for details!!</button>
                 </a>
 
                 <br></br>
 
               </li>
-
 
             );
           })}
@@ -51,7 +58,6 @@ const TableComponent = ({ movies }) => {
       </div>
     </div>
   );
-
 
 };
 
