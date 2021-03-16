@@ -1,3 +1,5 @@
+import RemoveMovie from './RemoveMovie';
+
 const MovieForm = () =>{
     return(
     <div className="row mb-5">   
@@ -62,9 +64,6 @@ const MovieForm = () =>{
                     </div>
                 <div className="form-row">
                     <button className="col-4 offset-4 mb-2 btn btn-info">Save Movie</button>                     
-                </div>
-                <div className="form-row">
-                    <button className="col-4 offset-4 btn btn-outline-danger">Remove Movie</button>                     
                 </div>
             </form>
         </div>

@@ -1,3 +1,6 @@
+import './RemoveMovie';
+import handleRemove from './App'
+
 const movies = [
   {
       id: 1,
@@ -131,7 +134,8 @@ return(
                                 <td>
                                     <button className='btn btn-success' onClick={()=>showDetails(movieData.id)}>Description</button>
                                 </td>
-                            </tr> 
+                                <td><button className=" offset-4 btn btn-outline-danger" onclick={handleRemove}>Remove Movie</button></td>
+                            </tr>
                         );
                     }    
                     )}
