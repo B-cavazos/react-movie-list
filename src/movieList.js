@@ -111,7 +111,7 @@ return(
                         <th>Genre</th>
                         <th>Year</th>
                         <th>Image</th>
-                        <th>IMDB Page</th>
+                        <th>Movie Description</th>
                     </tr>
                 </thead>
                 <tbody>
