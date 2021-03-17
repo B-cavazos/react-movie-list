@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import moviesList from './movieList';
 import MovieForm from './FormComponent';
-import TableComponent from './movieList';
+import TableComponent from './TableComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 

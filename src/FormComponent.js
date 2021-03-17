@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const MovieForm = ({    addMovie    }) =>{
+const MovieForm = ({ addMovie }) =>{
     const[movieTitle,setTitle]=useState();
     const[movieGenre,setGenre]=useState();
     const[movieYear,setYear]=useState();

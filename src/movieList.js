@@ -91,7 +91,7 @@ const moviesList = [
     },
 ];
 
-const TableComponent = () =>{
+/* const TableComponent = () =>{
 
   const showDetails = (movieId) =>{
       let foundMovie = moviesList.find(movies => movies.id === movieId);
@@ -139,5 +139,5 @@ const TableComponent = () =>{
   );
 
 };
-
-export default TableComponent;
+ */
+export default moviesList;
