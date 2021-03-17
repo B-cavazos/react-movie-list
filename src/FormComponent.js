@@ -1,4 +1,29 @@
-const MovieForm = () =>{
+import {useState} from 'react';
+
+const MovieForm = ({    addMovie    }) =>{
+    const[movieTitle,setTitle]=useState();
+    const[movieGenre,setGenre]=useState();
+    const[movieYear,setYear]=useState();
+    const[movieImage,setMovieImage]=useState();
+    const[movieImdb,setImdb]=useState();
+    const[movieDetails,setDetails]=useState();
+
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        let newMovie = {
+            title: movieTitle,
+            genre: movieGenre,
+            year: movieYear,
+            movieImage: movieImage,
+            imdbLink: movieImdb,
+            details: movieDetails,
+        };
+        console.log(newMovie);
+        addMovie(newMovie);
+
+    };
+
     return(
     <div className="row mb-5">   
         <div className="col-12">
@@ -6,14 +31,14 @@ const MovieForm = () =>{
             <div className="text-center mt-4">
                 <h3 className="text-muted">Movie Form</h3>
             </div>
-            <form action='submit' id='movie-form' className="col-8 offset-2" onsubmit=''>
+            <form action='submit' id='movie-form' className="col-8 offset-2" onSubmit={handleSubmit}>
                 <div className="form-group">
                         <label htmlFor="movieTitle">Movie Title </label>
                         <input
                                 type="text"
                                 id="movieTitle"
                                 className="form-control"
-                                onChange=""
+                                onChange={setTitle}
                             />
                     </div>
                 <div className="form-group">                    
@@ -24,7 +49,7 @@ const MovieForm = () =>{
                                     type="text"
                                     id="Genre"
                                     className="form-control"
-                                    onChange=""
+                                    onChange={setGenre}
                                 />
                             </div>
                             <div className='col'>
@@ -33,7 +58,7 @@ const MovieForm = () =>{
                                     type="number"
                                     id="year"
                                     className="form-control"
-                                    onChange=""
+                                    onChange={setYear}
                                 />
                             </div>
                         </div>
@@ -45,7 +70,7 @@ const MovieForm = () =>{
                                 type="text"
                                 id="imageLink"
                                 className="form-control"
-                                onChange=""
+                                onChange={setMovieImage}
                             />
                             </div>
                         </div>
@@ -56,7 +81,7 @@ const MovieForm = () =>{
                             type="text"
                             id="movieDescription"
                             className="form-control"
-                                onChange=""
+                            onChange={setDetails}
                         />
                         </div>
                     </div>
